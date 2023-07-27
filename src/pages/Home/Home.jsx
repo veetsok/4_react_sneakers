@@ -1,5 +1,7 @@
 import React from "react";
-import Card from "../components/Card";
+import Card from "../../components/Card";
+
+import "./styled.scss";
 
 function Home({
   items,
@@ -26,15 +28,15 @@ function Home({
   };
 
   return (
-    <div className="content p-40">
-      <div className="d-flex align-center justify-between mb-40">
+    <div className="content main">
+      <div className="main__block">
         <h1>{searchValue ? `Поиск по запросу: "${searchValue}"` : "Все кроссовки"}</h1>
-        <div className="search-block d-flex">
+        <div className="search-block">
           <img src="img/search.svg" alt="Search" />
           {searchValue && (
             <img
               onClick={() => setSearchValue("")}
-              className="clear cu-p"
+              className="clear"
               src="img/btn-remove.svg"
               alt="Clear"
             />
@@ -46,7 +48,7 @@ function Home({
           />
         </div>
       </div>
-      <div className="d-flex flex-wrap">{renderItems()}</div>
+      <div className="main__card">{renderItems()}</div>
     </div>
   );
 }

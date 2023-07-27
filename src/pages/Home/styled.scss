@@ -1,0 +1,22 @@
+.main {
+  padding: 40px !important;
+ &__block{
+  display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 40px;
+ }
+ &__card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+ }
+}
+
+.search-block{
+  	border: 1px solid #f3f3f3;
+    display: flex;
+    border-radius: 10px;
+    padding: 0 15px;
+    position: relative;
+}

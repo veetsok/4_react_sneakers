@@ -5,6 +5,7 @@ import AppContext from "../../context";
 
 import styles from "./Card.module.scss";
 
+
 function Card({
   id,
   title,
@@ -54,8 +55,8 @@ function Card({
           )}
           <img width="100%" height={135} src={imageUrl} alt="Sneakers" />
           <h5>{title}</h5>
-          <div className="d-flex justify-between align-center">
-            <div className="d-flex flex-column">
+          <div className={styles.card__block}>
+            <div className={styles.card__block__price}>
               <span>Цена:</span>
               <b>{price} руб.</b>
             </div>
