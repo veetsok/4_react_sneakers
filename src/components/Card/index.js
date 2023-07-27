@@ -46,7 +46,7 @@ function Card({
           <rect x="124" y="230" rx="10" ry="10" width="32" height="32" />
         </ContentLoader>
       ) : (
-        <>
+        <div>
           {onFavorite && (
             <div className={styles.favorite} onClick={onClickFavorite}>
               <img src={isFavorite ? "img/liked.svg" : "img/unliked.svg"} alt="Unliked" />
@@ -68,7 +68,7 @@ function Card({
               />
             )}
           </div>
-        </>
+        </div>
       )}
     </div>
   );

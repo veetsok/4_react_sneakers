@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "../components/Card";
 
-const Home = ({
+function Home({
   items,
   searchValue,
   setSearchValue,
@@ -9,7 +9,7 @@ const Home = ({
   onAddToFavorite,
   onAddToCart,
   isLoading,
-}) => {
+}) {
   const renderItems = () => {
     const filtredItems = items.filter((item) =>
       item.title.toLowerCase().includes(searchValue.toLowerCase())
@@ -24,6 +24,7 @@ const Home = ({
       />
     ));
   };
+
   return (
     <div className="content p-40">
       <div className="d-flex align-center justify-between mb-40">
@@ -45,11 +46,9 @@ const Home = ({
           />
         </div>
       </div>
-      <div className="d-flex flex-wrap">
-        <Card />
-      </div>
+      <div className="d-flex flex-wrap">{renderItems()}</div>
     </div>
   );
-};
+}
 
 export default Home;
