@@ -3,9 +3,8 @@ import axios from "axios";
 import Info from "../Info";
 import { useCart } from "../../hooks/useCart";
 
-import "./styled.scss";
-
-import styles from "./Drawer.module.css";
+import styles from "./Drawer.module.scss";
+import "./Drawer.module.scss";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -39,14 +38,14 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
   return (
     <div className={`${styles.overlay} ${opened ? styles.overlayVisible : ""}`}>
       <div className={styles.drawer}>
-        <h2 className="d-flex justify-between mb-30">
+        <h2 className={styles.basket}>
           Корзина
           <img onClick={onClose} className="cu-p" src="img/btn-remove.svg" alt="Close" />
         </h2>
 
         {items.length > 0 ? (
-          <div className="d-flex flex-column flex">
-            <div className="items flex">
+          <div className={styles.basket__block}>
+            <div className="items">
               {items.map((obj) => (
                 <div key={obj.id} className="cartItem d-flex align-center mb-20">
                   <div
