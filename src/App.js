@@ -30,7 +30,6 @@ function App() {
         setFavorites(favoritesResponse.data);
         setItems(itemsResponse.data);
       } catch (error) {
-        alert("Ошибка при запросе данных ;(");
         console.error(error);
       }
     }
@@ -124,7 +123,7 @@ function App() {
         setFavorites(favoritesResponse.data);
         setItems(itemsResponse.data);
       } catch (error) {
-        alert("Ошибка при запросе данных");
+        // alert("Ошибка при запросе данных");
         console.error(error);
       }
     }
