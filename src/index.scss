@@ -37,10 +37,16 @@ header {
 
 .cartEmpty {
   text-align: center;
+  justify-content: center;
+  h2{
+    padding: 20px 0;
+    text-align: center;
+  }
 
   p {
     width: 280px;
-    line-height: 24px;
+    line-height: 24px; text-align: center;
+    margin: 0 auto;
   }
 
   .greenButton {

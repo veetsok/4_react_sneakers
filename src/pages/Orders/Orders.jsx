@@ -4,6 +4,8 @@ import axios from "axios";
 import Card from "../../components/Card";
 import AppContext from "../../context";
 
+import "./styled.scss";
+
 function Orders() {
   const { onAddToFavorite, onAddToCart } = React.useContext(AppContext);
   const [orders, setOrders] = React.useState([]);
@@ -26,7 +28,7 @@ function Orders() {
 
   return (
     <div className="content p-40">
-      <div className="d-flex align-center justify-between mb-40">
+      <div className="order__block d-flex align-center justify-between mb-40">
         <h1>Мои заказы</h1>
       </div>
 

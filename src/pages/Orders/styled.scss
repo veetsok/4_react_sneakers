@@ -1,34 +1,6 @@
-.header {
+.order__block {
   display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 40px;
-	border-bottom: 1px solid #eaeaea;
-  & a {
-    text-decoration: none;
-  }
-  & h3{
-    color: #000;
-  }
-  & p{
-    color: #9d9d9d;
-    opacity: 5;
-  }
-  &__block{
-    display: flex;
-	  align-items: center;
-    & img {
-
-    }
-  }
-  &__ul{
-    list-style: none;
-    display: flex;
-    align-items: center;
-
-  }
-  &__ul__li{
-    margin: 0  30px;
-    cursor: pointer;
-  }
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
 }
