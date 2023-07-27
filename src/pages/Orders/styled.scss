@@ -1,6 +1,12 @@
+.orders {
+  padding: 40px;
+}
+
 .order__block {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 40px;
 }
+
+.orders-card {justify-content: space-between;}

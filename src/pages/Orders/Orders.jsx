@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 
 import Card from "../../components/Card";
@@ -7,32 +7,33 @@ import AppContext from "../../context";
 import "./styled.scss";
 
 function Orders() {
-  const { onAddToFavorite, onAddToCart } = React.useContext(AppContext);
-  const [orders, setOrders] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
+  const { onAddToFavorite, onAddToCart } = useContext(AppContext);
+  const [orders, setOrders] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  React.useEffect(() => {
-    (async () => {
+  useEffect(() => {
+    async function fetchData() {
       try {
         const { data } = await axios.get(
-          "https://60d62397943aa60017768e77.mockapi.io/orders"
+          "https://64c1da41fa35860baea0e309.mockapi.io/orders"
         );
         setOrders(data.reduce((prev, obj) => [...prev, ...obj.items], []));
         setIsLoading(false);
       } catch (error) {
-        alert("Ошибка при запросе заказов");
+        // alert("Ошибка при запросе заказов");
         console.error(error);
       }
-    })();
+    }
+    fetchData();
   }, []);
 
   return (
-    <div className="content p-40">
+    <div className="orders">
       <div className="order__block d-flex align-center justify-between mb-40">
         <h1>Мои заказы</h1>
       </div>
 
-      <div className="d-flex flex-wrap">
+      <div className=" orders-card d-flex flex-wrap">
         {(isLoading ? [...Array(8)] : orders).map((item, index) => (
           <Card key={index} loading={isLoading} {...item} />
         ))}
